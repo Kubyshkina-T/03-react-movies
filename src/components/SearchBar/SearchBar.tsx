@@ -9,39 +9,40 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
     const handleSubmit = (formData: FormData) => {
         const query = formData.get("query") as string;
         if (query.trim() === "") {
-            toast('Please enter your search query.', { duration: 3000 });
+            toast('Please enter your search query.', { duration: 2000 });
+            return;
         }
         onSubmit(query)
         }
         
-        return (
-            <header className={css.header}>
-                <div className={css.container}>
-                    <a
-                        className={css.link}
-                        href="https://www.themoviedb.org/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Powered by TMDB
-                    </a>
-                    <form action={handleSubmit}
-                        className={css.form}>
-                        <input
-                            className={css.input}
-                            type="text"
-                            name="query"
-                            autoComplete="off"
-                            placeholder="Search movies..."
-                            autoFocus
-                        />
+return (
+    <header className={css.header}>
+        <div className={css.container}>
+            <a
+                className={css.link}
+                href="https://www.themoviedb.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                Powered by TMDB
+            </a>
+        <form action={handleSubmit}
+            className={css.form}>
+            <input
+                className={css.input}
+                type="text"
+                name="query"
+                autoComplete="off"
+                placeholder="Search movies..."
+                autoFocus
+                />
                        
-                        <button className={css.button} type="submit">
-                            Search
-                        </button>
-                    </form>
-                    <Toaster position="top-right" />
-                </div>
+        <button className={css.button} type="submit">
+                Search
+        </button>
+        </form>
+            <Toaster />
+            </div>
             </header>
         )
     }
