@@ -1,4 +1,3 @@
-import css from "./App.module.css"
 import { useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 import MovieGrid from '../MovieGrid/MovieGrid';
