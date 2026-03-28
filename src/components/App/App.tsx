@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 import MovieGrid from '../MovieGrid/MovieGrid';
-import type Movie from '../../types/movie'
+import type { Movie } from '../../types/movie'
 import toast from 'react-hot-toast';
 import fetchMovies from '../../services/movieService';
 import Loader from "../Loader/Loader";
